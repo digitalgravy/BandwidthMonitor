@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  h1 Sky Bandwidth Monitor
+  p 
+    | This site was set up to reveal real-time reports on the quality of the Sky Fibre Broadband at 
+    a(href='https://twitter.com/digitalgravy') digitialgravy's
+    |  home. 
+  p All latencies are based on sending a 64 byte packet to 
+    a(href='http://google.com') google.com
+    | . 
+  p Download speed is calculated by downloading a 5MB file from 
+    a(href='http://www.thinkbroadband.com/download.html') thinkbroadband.com
+    | .
+  
+  #results
+    #todaysresults
+      .graphRow
+        .graph
+          h2 Current latency
+          p(class='current')
+           = latency.ping
+           | ms
+        .graph
+          h2 Current download speed
+          .download
+            p(class='res') Waiting for test.
+            p(class='nextime') Retesting...
+      .graphRow
+        .graph
+          h2 Download speeds (kb/s) from the last 24 hours
+          #downloadOneDay
+        .graph
+          h2 Download speeds (kb/s) from the last 7 days
+          #downloadOneWeek
+      .graphRow
+        .graph
+          h2 The last 5 minutes
+          #currentLatency
+        .graph
+          h2 The last hour
+          #graph1hour
+      .graphRow
+        .graph
+          h2 The last 24 hours
+          #graph24hours	
+        .graph
+          h2 The last 7 days
+          #graph7days

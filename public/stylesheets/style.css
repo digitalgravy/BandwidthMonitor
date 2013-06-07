@@ -1,0 +1,12 @@
+body {
+  padding: 25px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#downloadOneDay, #downloadOneWeek, #graph7days, #graph1hour, #graph24hours, #currentLatency { width: 100%; height:300px; }
+.graph	{width:50%; float:left;}
+.graphRow	{clear:left; }
