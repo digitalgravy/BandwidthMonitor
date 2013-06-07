@@ -135,7 +135,8 @@ window.onload = function(){
 	    parseDownload({created_at: new Date().toISOString(), bps: data.bps});
 	    downloadHistory.day.push({created_at: new Date().toISOString(), bps: data.bps});
 	    downloadHistory.week.push({created_at: new Date().toISOString(), bps: data.bps});
-	   	generateChart('downloadOneDay', downloadHistory); 
+	   	generateChart('downloadOneDay', downloadHistory.day); 
+	   	generateChart('downloadOneWeek', downloadHistory.week); 
     });
 	
 };
